@@ -2,6 +2,7 @@ using AppointmentBooking.API.Controllers;
 using AppointmentBooking.Application.Interfaces;
 using AppointmentBooking.Infrastructure.Services;
 using AppointmentConfirmation.API.Controllers;
+using AppointmentConfirmation.API.Handlers;
 using DoctorAppointmentManagement.API.Controllers;
 using DoctorAppointmentManagement.Application.Ports;
 using DoctorAppointmentManagement.Infrastructure.Adapters;
@@ -14,6 +15,11 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly); // still needed for Host commands/queries
+    cfg.RegisterServicesFromAssembly(typeof(AppointmentBookedHandler).Assembly); // add this for handlers
+});
 builder.Services.AddScoped<ISlotService, SlotService>();
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<IAppointmentManagementService, InMemoryAppointmentService>();
