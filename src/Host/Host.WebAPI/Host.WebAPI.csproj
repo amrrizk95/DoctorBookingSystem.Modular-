@@ -20,6 +20,7 @@
     <ProjectReference Include="..\..\Modules\AppointmentManagement\DoctorAppointmentManagement.Infrastructure\DoctorAppointmentManagement.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Modules\DoctorAvailability\DoctorAvailability.API\DoctorAvailability.API.csproj" />
     <ProjectReference Include="..\..\Modules\DoctorAvailability\DoctorAvailability.Infrastructure\DoctorAvailability.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Shared\DoctorBookingSystem.Shared\DoctorBookingSystem.Shared.csproj" />
   </ItemGroup>
 
 </Project>

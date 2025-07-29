@@ -24,6 +24,7 @@ namespace AppointmentBooking.API.Controllers
         [HttpPost]
         public IActionResult Book(Appointment appointment)
         {
+
             _appointmentService.Book(appointment);
             return Ok();
         }

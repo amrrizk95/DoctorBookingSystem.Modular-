@@ -19,7 +19,7 @@ namespace DoctorAvailability.Infrastructure.Repositories
 
         public IEnumerable<Slot> GetAvailableSlots()
         {
-            return _slots.Where(s => !s.IsReserved).OrderBy(s => s.Time);
+            return _slots.Where(s => !s.IsReserved).OrderBy(s => s.StartTime);
         }
     }
 }

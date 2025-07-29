@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\DoctorBookingSystem.Shared\DoctorBookingSystem.Shared.csproj" />
     <ProjectReference Include="..\DoctorAvailability.Application\DoctorAvailability.Application.csproj" />
     <ProjectReference Include="..\DoctorAvailability.Domain\DoctorAvailability.Domain.csproj" />
   </ItemGroup>
