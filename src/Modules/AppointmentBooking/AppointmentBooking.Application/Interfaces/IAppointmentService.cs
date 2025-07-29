@@ -1,4 +1,5 @@
 ﻿using AppointmentBooking.Domain.Entities;
+using DoctorBookingSystem.Shared.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace AppointmentBooking.Application.Interfaces
         IEnumerable<Appointment> GetAll();
         Appointment? GetById(Guid id);
         void Cancel(Guid id);
+        IEnumerable<SlotDto> GetSlotsForDoctor(Guid doctorId);
     }
 }

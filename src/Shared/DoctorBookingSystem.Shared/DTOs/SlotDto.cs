@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DoctorAvailability.Domain.Entities
+namespace DoctorBookingSystem.Shared.DTOs
 {
-    public class Slot
+    public class SlotDto
     {
         public Guid Id { get; set; }
+        public Guid DoctorId { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public Guid DoctorId { get; set; }
-        public bool IsReserved { get; set; }
-        public decimal Cost { get; set; }
     }
 }

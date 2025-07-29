@@ -1,5 +1,7 @@
 ﻿using AppointmentBooking.Application.Interfaces;
 using AppointmentBooking.Domain.Entities;
+using DoctorBookingSystem.Shared.DTOs;
+using DoctorBookingSystem.Shared.Interfaces.DoctorAvailability;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +12,18 @@ namespace AppointmentBooking.Infrastructure.Services
 {
     public class AppointmentService : IAppointmentService
     {
+        private readonly ISlotProvider _slotProvider;
+        public AppointmentService(ISlotProvider slotProvider)
+        {
+            _slotProvider = slotProvider;
+        }
         private static readonly List<Appointment> _appointments = new();
 
         public void Book(Appointment appointment)
         {
+            var isAvailable = _slotProvider.IsSlotAvailable(appointment.DoctorId, appointment.BookingDate);
+            if (!isAvailable)
+                return ;
             appointment.Id = Guid.NewGuid();
             appointment.BookingDate = DateTime.UtcNow;
             appointment.Status = AppointmentStatus.Pending;
@@ -32,6 +42,11 @@ namespace AppointmentBooking.Infrastructure.Services
             {
                 appointment.Status = AppointmentStatus.Cancelled;
             }
+        }
+
+        public IEnumerable<SlotDto> GetSlotsForDoctor(Guid doctorId)
+        {
+            return _slotProvider.GetAvailableSlots(doctorId);
         }
     }
 }
