@@ -16,6 +16,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{88A14E1E-094C-41A1-8819-DFAF0C025904}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{793B7C2C-EBC0-4600-9388-968DD20E6A64}"
+	ProjectSection(SolutionItems) = preProject
+		note.txt = note.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorAvailability.Application", "src\Modules\DoctorAvailability\DoctorAvailability.Application\DoctorAvailability.Application.csproj", "{F3737384-C5A2-438C-898E-88D26E05EC58}"
 EndProject
@@ -47,7 +50,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorAppointmentManagement
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorAppointmentManagement.API", "src\Modules\AppointmentManagement\DoctorAppointmentManagement.API\DoctorAppointmentManagement.API.csproj", "{55FE390D-DC31-4DE1-86F1-E25B0797480D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorBookingSystem.Shared", "src\Shared\DoctorBookingSystem.Shared\DoctorBookingSystem.Shared.csproj", "{90024E45-3781-4A60-9A07-A587C3E166EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorBookingSystem.Shared", "src\Shared\DoctorBookingSystem.Shared\DoctorBookingSystem.Shared.csproj", "{90024E45-3781-4A60-9A07-A587C3E166EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
